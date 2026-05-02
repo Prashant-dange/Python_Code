@@ -2,9 +2,24 @@
 
 input_list= input("Enter a list to find meadian : ")
 
-cln_list = input_list.split()
+new_list = input_list.split()
 
-for i in range(0,len(input_list)):
-    cln_list[i]= int(input_list[i])
+i=0
+while i < len(new_list):
+    new_list[i]=int(new_list[i])
+    i=i+1
 
-print(cln_list)
+cln_list=sorted(new_list)
+
+print(cln_list, "and length is ",len(cln_list))
+
+length = len(cln_list)
+if length % 2 == 0:
+    evenindex=int(length/2)
+    print(evenindex)
+    meadian=(cln_list[evenindex] + cln_list[evenindex-1])/2
+    print("Median is ",meadian)
+else:
+    index=int(length/2)
+    print("Meadian is ",cln_list[index])
+
